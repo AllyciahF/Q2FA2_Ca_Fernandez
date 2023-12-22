@@ -1,0 +1,152 @@
+*{margin: 0;padding: 0; box-sizing: border-box; }
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 6dvh;
+    overflow-x: hidden;
+}
+
+a{text-decoration: none; color: white}
+a:visited{ text-decoration: underline;}
+header{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2dvh;
+    padding-bottom: 2dvh;
+    background: #000000a1;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100dvw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1rem;
+    
+}
+
+header{position: fixed; z-index: 98;}
+section{
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    overflow: hidden;
+    padding-top: 4vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+#stars {
+    background: rgb(0, 0, 0) url('Images/star.jpeg');
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    z-index: 81;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    animation: twinklingStars 5s infinite;
+}
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 99; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(255, 251, 0);
+}
+
+#text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#text p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.Astronomy {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 90;
+}
+
+#planet {
+    background-image: url('Images/planet.gif');
+    width: 180px;
+    height: 180px;
+    animation: planetmotion 20s linear infinite;
+}
+
+#galaxy {
+    background-image: url('Images/galaxy.gif');
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    animation: galaxymotion 15s linear infinite;
+}
+
+#gas {
+    background-image: url('Images/gas.gif');
+    width: 200px;
+    height: 200px;
+    animation: gasmotion 20s linear infinite;
+}
+
+#ast {
+    background-image: url('Images/ast.gif');
+    width: 200px;
+    height: 200px;
+    animation: blackholegrow 500s;
+    position: relative;
+    left:50vw;
+    animation: astmotion 20s linear infinite;
+}
+
+#stars {
+    background: black url('Images/star.jpeg') ;
+    display: inline-block;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 81;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+
+@keyframes planetmotion {
+    0% {transform: translate(-300px, -300px) rotate(0deg) scale(1.5);}
+    50% {transform: translate(500px, 500px) rotate(180deg) scale(1);}
+    100% {transform: translate(1400px, 1000px) rotate(360deg) scale(0.5);}
+}
+
+@keyframes galaxymotion {
+    0% {transform: translate(-150px, -150px) rotate(0deg) scale(1.5);}
+    100% {transform: translate(1000px, 400px)  rotate(360deg) scale(0.5);}
+}
+
+@keyframes gasmotion {
+    0% {transform: translate(100px, -100px) rotate(0deg) scale(1);}
+    100% {transform: translate(1500px, 1250px) rotate(360deg) scale(0);}
+}
+
+@keyframes astgrow {
+    0% {transform: scale(100) rotate(90deg);}
+    100% {transform: scale(150) rotate(0deg);}
+}
+
+@keyframes astmotion {
+    0% {transform: translate(-300px, -300px) rotate(0deg) scale(1.5);}
+    50% {transform: translate(500px, 500px) rotate(0deg) scale(1);}
+}
+
+@keyframes twinklingStars {
+    0%, 100% {opacity: 0.5;}
+    50% {opacity: 1;}
+}
